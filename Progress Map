@@ -50,9 +50,9 @@
 
 ## 🔄 In Progress
 
-- [ ] Testing with a wider range of cancer types and cities
+- [ ] Create a seperate result box for plain language summary
 - [ ] Reviewing plain-language summaries for accuracy and readability
-- [ ] Cleaning up edge cases (e.g. unrecognized cities, API timeouts)
+
 
 ---
 
@@ -63,6 +63,7 @@
 | Cities not in the regions dictionary return no nearby center | Known — shows statewide results as fallback |
 | Some trials on ClinicalTrials.gov have incomplete location data | Known — user is directed to full trial page |
 | API may time out on slow connections | Known — error message displayed to user |
+|  Clinical Trial Results disappear when the plain language search is initiated |
 
 ---
 
