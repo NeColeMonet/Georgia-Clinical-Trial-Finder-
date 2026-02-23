@@ -1,0 +1,93 @@
+# 📊 Project Progress Map
+## Georgia Clinical Trial Navigator (GCTN)
+
+> **Current Status:** 🟡 In Progress — Core features working, actively improving
+
+---
+
+## ✅ Completed
+
+### Foundation
+- [x] Project concept and scope defined
+- [x] Python environment set up
+- [x] tkinter GUI framework chosen
+
+### Core Features
+- [x] Patient information input form (name, age, cancer type, subtype, city)
+- [x] Basic eligibility screening by age and cancer type
+- [x] Cancer subtype lookup with plain-language definitions
+- [x] Georgia region detection by city
+- [x] Nearby cancer center recommendations by region
+
+### ClinicalTrials.gov Integration
+- [x] Connected to ClinicalTrials.gov API v2
+- [x] Live search for recruiting trials in Georgia
+- [x] Results filtered by cancer type and subtype
+- [x] Plain-language trial summaries generated
+- [x] Georgia-specific location data extracted per trial
+- [x] Age eligibility warning flags added
+- [x] Direct links to full trial pages on ClinicalTrials.gov
+- [x] Background threading so GUI doesn't freeze during search
+
+### Medical Term Translator
+- [x] Paste-and-translate text box added
+- [x] Dictionary covering lung, breast, colon, pancreatic, and prostate cancer terms
+- [x] Dictionary covering general clinical trial terminology
+
+### UI & Usability
+- [x] Labeled input frames for cleaner layout
+- [x] Scrollable results panel
+- [x] Helper hint text on cancer type and subtype fields
+- [x] Styled search button
+
+### GitHub & Documentation
+- [x] Repository created on GitHub
+- [x] Code uploaded and published publicly
+- [x] README.md written with full project description
+- [x] Progress map created (this file!)
+
+---
+
+## 🔄 In Progress
+
+- [ ] Testing with a wider range of cancer types and cities
+- [ ] Reviewing plain-language summaries for accuracy and readability
+- [ ] Cleaning up edge cases (e.g. unrecognized cities, API timeouts)
+
+---
+
+## 🐛 Known Issues
+
+| Issue | Status |
+|---|---|
+| Cities not in the regions dictionary return no nearby center | Known — shows statewide results as fallback |
+| Some trials on ClinicalTrials.gov have incomplete location data | Known — user is directed to full trial page |
+| API may time out on slow connections | Known — error message displayed to user |
+
+---
+
+## 📝 Version History
+
+| Version | Date | Notes |
+|---|---|---|
+| v0.1 | — | Initial GUI with static eligibility check and region lookup |
+| v0.2 | — | Added ClinicalTrials.gov API integration |
+| v0.3 | — | Added plain-language summaries, threading, and UI improvements |
+| v0.4 | — | README and GitHub setup complete |
+
+> 💡 **Tip:** Update the dates in the version table as you make changes, and bump the version number each time you commit a meaningful update!
+
+---
+
+## 🏁 Definition of Done
+
+This project will be considered complete when:
+
+- [ ] All core features are tested and working reliably
+- [ ] Plain-language summaries are reviewed for clarity
+- [ ] README fully documents how to install and run the app
+- [ ] Code is clean, commented, and pushed to GitHub
+
+---
+
+*Last updated: February 2026*
