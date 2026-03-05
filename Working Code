@@ -322,7 +322,7 @@ def display_trials(trials, error, age):
     text_result.insert(tk.END, "  - Talk to your doctor or research nurse about these trials.\n")
     text_result.insert(tk.END, "  - Visit https://clinicaltrials.gov for full eligibility details.\n")
 
-
+#Changed on March 5th to add a separate pop up window
 def on_translate():
     medical_text = text_medical.get("1.0", tk.END).strip()
     if not medical_text:
@@ -331,13 +331,42 @@ def on_translate():
 
     explanations = explain_terms_in_text(medical_text)
 
-    result_text = "Plain-Language Explanations:\n\n"
+    # Open results in a NEW popup window so trial listings are not overwritten
+    popup = tk.Toplevel(root)
+    popup.title("Plain-Language Term Explanations")
+    popup.geometry("600x400")
+    popup.resizable(True, True)
+
+    tk.Label(
+        popup,
+        text="Plain-Language Explanations",
+        font=("Arial", 12, "bold"),
+        pady=10,
+    ).pack()
+
+    frame_pop = tk.Frame(popup)
+    frame_pop.pack(fill=tk.BOTH, expand=True, padx=10, pady=(0, 10))
+
+    pop_scrollbar = tk.Scrollbar(frame_pop)
+    pop_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+    pop_text = tk.Text(
+        frame_pop,
+        wrap=tk.WORD,
+        yscrollcommand=pop_scrollbar.set,
+        font=("Arial", 10),
+        padx=8,
+        pady=8,
+    )
+    pop_text.pack(fill=tk.BOTH, expand=True)
+    pop_scrollbar.config(command=pop_text.yview)
+
     for e in explanations:
-        result_text += f"  - {e}\n"
+        pop_text.insert(tk.END, f"  • {e}\n\n")
 
-    text_result.delete("1.0", tk.END)
-    text_result.insert(tk.END, result_text)
+    pop_text.config(state=tk.DISABLED)  # make read-only
 
+    tk.Button(popup, text="Close", command=popup.destroy, padx=10, pady=4).pack(pady=8)
 
 # -----------------------------
 # 6. GUI Layout
