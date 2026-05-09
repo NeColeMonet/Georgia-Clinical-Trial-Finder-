@@ -139,6 +139,7 @@ Trial data is retrieved live from ClinicalTrials.gov and may not reflect the mos
 - Trial data provided by the U.S. National Library of Medicine via the [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api)
 - AI explanations powered by [Anthropic Claude](https://www.anthropic.com)
 - Built as a Healthcare Info Systems Development course project at Kennesaw State University
+- Thank you to Professor Sam Davis for his leadership and mentorship. 
 
 ---
 
